@@ -1,0 +1,264 @@
+%-------------------------
+% Resume — Ajay Kumar Soma
+% Template base: Jake's Resume (MIT License)
+% Compile on Overleaf with XeLaTeX or pdfLaTeX
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%--- Custom commands ----------------------------------------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%=============================================================================
+\begin{document}
+
+%--- Header ------------------------------------------------------------------
+\begin{center}
+  {\Huge \scshape Ajay Kumar Soma} \\[4pt]
+  \small
+  Nagpur, India \quad$|$\quad
+  \href{mailto:ajaykumar.career@gmail.com}{ajaykumar.career@gmail.com} \quad$|$\quad
+  \href{https://linkedin.com/in/ajaykumarsoma}{linkedin.com/in/ajaykumarsoma} \\[2pt]
+  \href{https://ajaykumarsoma.github.io/MI-Portfolio}{ajaykumarsoma.github.io/MI-Portfolio}
+  \quad$|$\quad
+  \href{https://github.com/ajaykumarsoma}{github.com/ajaykumarsoma}
+\end{center}
+
+%--- Summary -----------------------------------------------------------------
+\section{Summary}
+Senior AI Engineer with 18 years of IT experience (3 years in applied AI)
+and MTech in Applied AI from VNIT Nagpur.
+Specialises in LLM safety, alignment-relevant fine-tuning (DPO, GRPO,
+reward modelling), production guardrails, RAG pipelines, and mechanistic
+interpretability — all implemented from algorithmic first principles.
+Combines hands-on production AI deployment at a Fortune-500 manufacturer
+with 33 independent research experiments covering the full alignment and
+safety engineering stack.
+\textbf{Target roles:} AI Safety Engineer $\cdot$ Responsible AI Engineer
+$\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
+
+%--- Experience --------------------------------------------------------------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {AI Engineer}{[Start Year] -- Present}
+    {Ashley Furniture Industries}{Nagpur, India}
+    \resumeItemListStart
+      \resumeItem{Deployed production ML-based [demand forecasting / QC /
+        recommendation] system serving [N] decisions per day; implemented
+        drift-detection alerting and human escalation paths for
+        low-confidence predictions — reducing silent model failures.}
+      \resumeItem{Evaluated and hardened LLM integration for internal
+        knowledge assistant; designed input sanitisation and output
+        grounding checks that reduced hallucinated product specifications
+        reaching downstream systems by [X]\%.}
+      \resumeItem{Led responsible-AI assessment of [N] vendor AI tools
+        against fairness, robustness, and explainability criteria before
+        procurement approval — established IT department's first AI
+        governance checklist.}
+      \resumeItem{Designed human-in-the-loop escalation workflow for
+        automated inventory-replenishment recommendations; defined
+        confidence thresholds requiring human review, preventing
+        high-value erroneous orders.}
+      \resumeItem{Conducted root-cause analysis on production model
+        failures; documented failure modes and contributed to retraining
+        and rollback protocols — first formal ML incident-response
+        process at Ashley IT.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {[Senior / Lead Title — e.g. Senior Software Engineer]}{[Year] -- [Year]}
+    {[Company Name]}{[Location]}
+    \resumeItemListStart
+      \resumeItem{[Bullet showing scale, reliability, or systems
+        ownership — even non-AI work counts: "owned production
+        pipeline serving Xk users/day with 99.9\% SLA"]}
+      \resumeItem{[Bullet showing technical leadership or cross-team
+        collaboration]}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {[Earlier Role]}{[Year] -- [Year]}
+    {[Company]}{[Location]}
+    \resumeItemListStart
+      \resumeItem{[1-2 bullets — keep brief for older roles]}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%--- Independent Research ----------------------------------------------------
+\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{33 projects — full portfolio}}
+\resumeSubHeadingListStart
+
+  %-- Manufacturing AI Safety ------------------------------------------------
+  \resumeProjectHeading
+    {\textbf{Manufacturing AI Safety} \emph{(motivated by Ashley deployment work)}}{}
+    \resumeItemListStart
+      \resumeItem{\textbf{ManufacturingRAG} — RAG pipeline for factory SOP
+        documents; hallucination rate 67\%$\to$8\% with retrieval grounding.
+        Demonstrates ungrounded LLMs are unsafe for factory-floor deployment.
+        \href{https://github.com/ajaykumarsoma/ManufacturingRAG}{$\nearrow$}}
+      \resumeItem{\textbf{SupplyChainGuardrails} — 3-layer safety harness for
+        automated purchase-order AI: anomaly detection + business-rule checker
+        + uncertainty-based human escalation. Catches 94\% of anomalous
+        recommendations before execution.
+        \href{https://github.com/ajaykumarsoma/SupplyChainGuardrails}{$\nearrow$}}
+      \resumeItem{\textbf{ProductDescriptionAlignment} — LoRA fine-tuning on
+        furniture product corpus; hallucinated dimension claims 43\%$\to$4\%
+        in 300 steps. Domain fine-tuning as a practical safety intervention.
+        \href{https://github.com/ajaykumarsoma/ProductDescriptionAlignment}{$\nearrow$}}
+      \resumeItem{\textbf{LLMRiskScorer} — Automated risk-scoring pipeline
+        classifying LLM deployment risk across 5 manufacturing use-cases
+        (document search $\to$ worker safety) using 6 measurable signals.
+        AUC~0.91. Operationalises the NIST AI RMF in code.
+        \href{https://github.com/ajaykumarsoma/LLMRiskScorer}{$\nearrow$}}
+    \resumeItemListEnd
+
+  %-- Alignment and Safety ---------------------------------------------------
+  \resumeProjectHeading
+    {\textbf{Alignment \& Safety}}{}
+    \resumeItemListStart
+      \resumeItem{\textbf{RewardModeling} — Bradley-Terry loss from scratch;
+        AUC 0.34$\to$0.98 with 768 trainable parameters (single linear head,
+        150 steps). Core RLHF component.
+        \href{https://github.com/ajaykumarsoma/RewardModeling}{$\nearrow$}}
+      \resumeItem{\textbf{GRPO} — DeepSeek R1 algorithm from scratch;
+        diagnosed reward density collapse at 117M scale (22\%$\to$0\%
+        accuracy) — explains why GRPO requires a strong pretrained base;
+        a critical production deployment safety consideration.
+        \href{https://github.com/ajaykumarsoma/GRPO}{$\nearrow$}}
+      \resumeItem{\textbf{DPO} — Direct Preference Optimisation; rejected
+        responses pushed 6$\times$ further in log-prob space than preferred
+        ($-$72.5 vs $-$11.3 log-ratio).
+        \href{https://github.com/ajaykumarsoma/DPO}{$\nearrow$}}
+      \resumeItem{\textbf{Guardrails} — 3-layer pipeline: input safety
+        classifier (P\,=\,1.00, zero false positives), PII detector
+        (recall\,=\,0.95), faithfulness filter (AUC\,=\,0.756).
+        No library — built from signal level.
+        \href{https://github.com/ajaykumarsoma/Guardrails}{$\nearrow$}}
+      \resumeItem{\textbf{EvalFramework} — LLM-as-Judge ($\rho$\,=\,$-$0.10),
+        G-Eval ($\rho$\,=\,0.36), hallucination detection (AUC\,=\,0.43).
+        Calibrates 10B+ parameter scale requirement for reliable automated
+        LLM evaluation.
+        \href{https://github.com/ajaykumarsoma/EvalFramework}{$\nearrow$}}
+    \resumeItemListEnd
+
+  %-- Fine-Tuning and Inference ----------------------------------------------
+  \resumeProjectHeading
+    {\textbf{Fine-Tuning \& Inference}}{}
+    \resumeItemListStart
+      \resumeItem{LoRA (r=64 beats full FT at 97\% fewer params) $\cdot$
+        SFT / InstructionTuning $\cdot$ KnowledgeDistillation $\cdot$
+        Quantization (INT8: +6.6 PPL, 4$\times$ compress; INT4 collapses) $\cdot$
+        ModelMerging / SLERP $\cdot$
+        SpeculativeDecoding (4.12$\times$ wall-clock speedup on M4) $\cdot$
+        AdvancedRAG (BM25, RRF, reranking) $\cdot$
+        StructuredOutput (0\%$\to$100\% JSON validity in 200 steps,
+        442k trainable params).}
+    \resumeItemListEnd
+
+  %-- Mechanistic Interpretability -------------------------------------------
+  \resumeProjectHeading
+    {\textbf{Mechanistic Interpretability} \emph{(13 experiments)}}{}
+    \resumeItemListStart
+      \resumeItem{Activation Patching $\cdot$ Sparse Autoencoders $\cdot$
+        Linear Probing $\cdot$ Logit Lens / DLA $\cdot$ CAA Steering $\cdot$
+        Gradient Attribution $\cdot$ Grokking $\cdot$ Superposition Theory
+        $\cdot$ CatastrophicForgetting $\cdot$ LLMAgents (ReAct loop).}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%--- Skills ------------------------------------------------------------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Safety \& Alignment}{: Reward modelling, DPO, GRPO, RLHF
+      pipelines, guardrails, hallucination detection, NIST AI RMF,
+      red-teaming, eval frameworks (LLM-as-Judge, G-Eval)} \\[2pt]
+    \textbf{Fine-Tuning}{: LoRA, QLoRA, SFT, instruction tuning,
+      knowledge distillation, INT8/INT4 PTQ, model merging (SLERP)} \\[2pt]
+    \textbf{Interpretability}{: Activation patching, sparse autoencoders,
+      logit lens, causal mediation analysis, linear probing} \\[2pt]
+    \textbf{Production AI}{: Model monitoring, drift detection,
+      human-in-the-loop design, failure mode analysis,
+      ML incident response, AI governance} \\[2pt]
+    \textbf{Stack}{: PyTorch, HuggingFace Transformers, Python,
+      Apple M4 MPS, RAG pipelines, Gradio}
+  }}
+\end{itemize}
+
+%--- Education ---------------------------------------------------------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {MTech, Applied Artificial Intelligence}{[Year of Completion]}
+    {Visvesvaraya National Institute of Technology (VNIT)}{Nagpur, India}
+  \resumeSubheading
+    {[BE / BTech, Field of Study]}{[Year]}
+    {[Institution Name]}{[Location]}
+\resumeSubHeadingListEnd
+
+\end{document}
