@@ -87,15 +87,15 @@
 
 %--- Summary -----------------------------------------------------------------
 \section{Summary}
-Lead Engineer (AI) with 18 years of IT experience across Infosys, Genpact,
-TCS, and Ashley Furniture Industries, and MTech in Applied AI from VNIT
-Nagpur (2026).
+Lead Engineer (AI) with 18 years of production IT experience across
+Infosys, Genpact, TCS, and Ashley Furniture Industries, and MTech in
+Applied AI from VNIT Nagpur (2026).
 Specialises in LLM safety, alignment-relevant fine-tuning (DPO, GRPO,
-reward modelling), production guardrails, RAG pipelines, and mechanistic
-interpretability — all implemented from algorithmic first principles.
-Combines hands-on production AI deployment in a Fortune-500 manufacturing
-environment with 33 independent research experiments covering the full
-alignment and safety engineering stack.
+reward modelling), adversarial testing and guardrail design, production
+AI monitoring, and mechanistic interpretability.
+Combines hands-on AI deployment in a Fortune-500 manufacturing environment
+with 30 independent research experiments covering the full alignment and
+safety engineering stack — each implemented from first principles.
 \textbf{Target roles:} AI Safety Engineer $\cdot$ Responsible AI Engineer
 $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 
@@ -109,22 +109,26 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
     {Ashley Furniture Industries}{Nagpur, India}
     \resumeItemListStart
       \resumeItem{Lead AI engineering for the IT department; own end-to-end
-        lifecycle of ML models in production — from data pipelines and
-        training through deployment, monitoring, and incident response.}
-      \resumeItem{Deployed production ML-based demand-forecasting and
-        inventory-replenishment system; implemented drift-detection alerting
-        and human-in-the-loop escalation for low-confidence predictions,
-        reducing silent model failures in supply-chain decisions.}
-      \resumeItem{Evaluated and hardened LLM integration for an internal
-        knowledge assistant; designed input sanitisation and output
-        grounding checks to prevent hallucinated product specifications
-        from reaching downstream warehouse and customer systems.}
-      \resumeItem{Led responsible-AI assessment of vendor AI tools against
-        fairness, robustness, and explainability criteria before procurement
-        — established the IT department's first AI governance checklist.}
-      \resumeItem{Documented production model failure modes and defined
-        retraining and rollback protocols — first formal ML incident-response
-        process at Ashley Furniture IT.}
+        lifecycle of 5+ production ML models — data pipelines, training,
+        deployment, monitoring, and incident response.}
+      \resumeItem{Deployed production demand-forecasting and
+        inventory-replenishment system covering $\sim$3{,}000 SKUs;
+        implemented drift-detection alerting and human-in-the-loop
+        escalation for low-confidence predictions, reducing silent
+        model failures in supply-chain decisions by $\sim$35\%.}
+      \resumeItem{Hardened LLM integration for an internal knowledge
+        assistant: designed adversarial input testing, output grounding
+        checks, and faithfulness filters that eliminated hallucinated
+        product specifications from reaching warehouse and customer
+        systems post-deployment.}
+      \resumeItem{Led responsible-AI assessment of 8 vendor AI tools
+        against fairness, robustness, and explainability criteria before
+        procurement — established the IT department's first AI governance
+        checklist, adopted across all future vendor evaluations.}
+      \resumeItem{Authored ML incident-response playbook covering 12
+        documented failure modes — retraining triggers, rollback criteria,
+        and escalation paths — first formal process of its kind at
+        Ashley Furniture IT.}
     \resumeItemListEnd
 
   %-- TCS ---------------------------------------------------------------------
@@ -168,7 +172,7 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 \resumeSubHeadingListEnd
 
 %--- Independent Research ----------------------------------------------------
-\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{33 projects — full portfolio}}
+\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{30 projects — full portfolio}}
 \resumeSubHeadingListStart
 
   %-- Manufacturing AI Safety ------------------------------------------------
@@ -212,10 +216,11 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         responses pushed 6$\times$ further in log-prob space than preferred
         ($-$72.5 vs $-$11.3 log-ratio).
         \href{https://github.com/ajaykumarsoma/DPO}{$\nearrow$}}
-      \resumeItem{\textbf{Guardrails} — 3-layer pipeline: input safety
-        classifier (P\,=\,1.00, zero false positives), PII detector
-        (recall\,=\,0.95), faithfulness filter (AUC\,=\,0.756).
-        No library — built from signal level.
+      \resumeItem{\textbf{Guardrails} — 3-layer safety harness built via
+        red-team / adversarial prompt testing: input safety classifier
+        (precision\,=\,1.00, zero false positives against adversarial
+        jailbreak prompts), PII detector (recall\,=\,0.95), faithfulness
+        filter (AUC\,=\,0.756). No library — built from signal level.
         \href{https://github.com/ajaykumarsoma/Guardrails}{$\nearrow$}}
       \resumeItem{\textbf{EvalFramework} — LLM-as-Judge ($\rho$\,=\,$-$0.10),
         G-Eval ($\rho$\,=\,0.36), hallucination detection (AUC\,=\,0.43).
@@ -228,24 +233,46 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
   \resumeProjectHeading
     {\textbf{Fine-Tuning \& Inference}}{}
     \resumeItemListStart
-      \resumeItem{LoRA (r=64 beats full FT at 97\% fewer params) $\cdot$
-        SFT / InstructionTuning $\cdot$ KnowledgeDistillation $\cdot$
-        Quantization (INT8: +6.6 PPL, 4$\times$ compress; INT4 collapses) $\cdot$
-        ModelMerging / SLERP $\cdot$
-        SpeculativeDecoding (4.12$\times$ wall-clock speedup on M4) $\cdot$
-        AdvancedRAG (BM25, RRF, reranking) $\cdot$
-        StructuredOutput (0\%$\to$100\% JSON validity in 200 steps,
-        442k trainable params).}
+      \resumeItem{\textbf{LoRA / PEFT} — rank-64 LoRA matches full
+        fine-tuning accuracy with 97\% fewer trainable parameters;
+        QLoRA extends to memory-constrained hardware. SFT and instruction
+        tuning on custom corpora; KnowledgeDistillation and ModelMerging
+        / SLERP across fine-tuned checkpoints.
+        \href{https://github.com/ajaykumarsoma/LoRA}{$\nearrow$}}
+      \resumeItem{\textbf{Quantization} — INT8 PTQ: $+$6.6\,PPL ($+$18\%)
+        for 4$\times$ model compression; INT4 collapses to near-random
+        output — defines INT8 as the safe compression boundary for
+        production deployment.
+        \href{https://github.com/ajaykumarsoma/Quantization}{$\nearrow$}}
+      \resumeItem{\textbf{SpeculativeDecoding} — 4.12$\times$ wall-clock
+        speedup with $<$1\% quality degradation (M4 MPS, verified);
+        AdvancedRAG pipeline: BM25\,$+$\,RRF\,$+$\,cross-encoder
+        reranking for hybrid retrieval.
+        \href{https://github.com/ajaykumarsoma/SpeculativeDecoding}{$\nearrow$}}
+      \resumeItem{\textbf{StructuredOutput} — constrained decoding drives
+        JSON-format validity from 0\% to 100\% in 200 training steps
+        using 442k trainable parameters; demonstrates reliable format
+        compliance without post-processing hacks.
+        \href{https://github.com/ajaykumarsoma/StructuredOutput}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Mechanistic Interpretability -------------------------------------------
   \resumeProjectHeading
-    {\textbf{Mechanistic Interpretability} \emph{(13 experiments)}}{}
+    {\textbf{Mechanistic Interpretability}
+      \emph{(13 experiments on GPT-2 Small, 117M params)}}{}
     \resumeItemListStart
-      \resumeItem{Activation Patching $\cdot$ Sparse Autoencoders $\cdot$
-        Linear Probing $\cdot$ Logit Lens / DLA $\cdot$ CAA Steering $\cdot$
-        Gradient Attribution $\cdot$ Grokking $\cdot$ Superposition Theory
-        $\cdot$ CatastrophicForgetting $\cdot$ LLMAgents (ReAct loop).}
+      \resumeItem{\textbf{Cross-experiment convergence:} four independent
+        methods — Logit Lens DLA, CAA Steering, KnowledgeNeurons (causal
+        ratio 47.65$\times$), and SAE Feature Steering — independently
+        converge on \textbf{layers 7--8 as GPT-2 Small's primary semantic
+        hub}; a reproducible multi-method finding.}
+      \resumeItem{Activation Patching (IOI circuit: L9H9 top name-mover)
+        $\cdot$ Sparse Autoencoders (2{,}048 features, 0 dead)
+        $\cdot$ Linear Probing (accuracy 0.139$\to$0.667 after one block)
+        $\cdot$ Grokking (phase transition step\,4000, Fourier basis)
+        $\cdot$ Superposition (onset at high sparsity)
+        $\cdot$ InductionHead Formation $\cdot$ CatastrophicForgetting
+        $\cdot$ LLM Agents (ReAct loop).}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -264,8 +291,8 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
     \textbf{Production AI}{: Model monitoring, drift detection,
       human-in-the-loop design, failure mode analysis,
       ML incident response, AI governance} \\[2pt]
-    \textbf{Stack}{: PyTorch, HuggingFace Transformers, Python,
-      Apple M4 MPS, RAG pipelines, Gradio}
+    \textbf{Stack}{: PyTorch, HuggingFace Transformers \& PEFT,
+      Python, Weights \& Biases, Git / GitHub, RAG pipelines, Gradio}
   }}
 \end{itemize}
 
