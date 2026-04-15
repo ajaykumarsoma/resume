@@ -90,9 +90,11 @@
 Lead Engineer (AI) with 18 years of production IT experience across
 Infosys, Genpact, TCS, and Ashley Furniture Industries, and MTech in
 Applied AI from VNIT Nagpur (2026).
-Specialises in LLM safety, alignment-relevant fine-tuning (DPO, GRPO,
-reward modelling), adversarial testing and guardrail design, production
-AI monitoring, and mechanistic interpretability.
+Specialises in building interpretable and steerable AI systems:
+alignment-relevant fine-tuning (DPO, GRPO, reward modelling),
+adversarial testing and guardrail design, behavioral ML classifiers
+for misuse detection, production AI monitoring, and mechanistic
+interpretability.
 Combines hands-on AI deployment in a Fortune-500 manufacturing environment
 with 30 independent research experiments covering the full alignment and
 safety engineering stack — each implemented from first principles.
@@ -178,11 +180,11 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
     {Infosys Technologies}{India}
     \resumeItemListStart
       \resumeItem{Built and maintained mission-critical compliance systems
-        for HSBC Middle East on IBM AS/400 (RPGLE/DB2): customer fraud
-        monitoring (CAMP), KYC/AML regulatory pipelines for Lebanon, and
-        automated central-bank credit-facility reporting for Kuwait,
-        Bahrain, and UAE — production systems where a data error carried
-        direct regulatory penalties.}
+        for HSBC Middle East on IBM AS/400 (RPGLE/DB2): transaction
+        anomaly detection for fraud prevention (CAMP), KYC/AML regulatory
+        pipelines for Lebanon, and automated central-bank credit-facility
+        reporting for Kuwait, Bahrain, and UAE — production systems where
+        a data error carried direct regulatory penalties.}
       \resumeItem{Automated stamp-tax calculations, overdraft-renewal
         processing, and multi-country central-bank report generation,
         eliminating error-prone manual workflows across millions of
@@ -204,10 +206,12 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         documents; hallucination rate 67\%$\to$8\% with retrieval grounding.
         Demonstrates ungrounded LLMs are unsafe for factory-floor deployment.
         \href{https://github.com/ajaykumarsoma/ManufacturingRAG}{$\nearrow$}}
-      \resumeItem{\textbf{SupplyChainGuardrails} — 3-layer safety harness for
-        automated purchase-order AI: anomaly detection + business-rule checker
-        + uncertainty-based human escalation. Catches 94\% of anomalous
-        recommendations before execution.
+      \resumeItem{\textbf{SupplyChainGuardrails} — behavioral ML classifier
+        pipeline for automated purchase-order AI: statistical anomaly
+        detection + business-rule classifier + uncertainty-based human
+        escalation. Catches 94\% of anomalous recommendations before
+        execution — applied safety engineering in a live manufacturing
+        context.
         \href{https://github.com/ajaykumarsoma/SupplyChainGuardrails}{$\nearrow$}}
       \resumeItem{\textbf{ProductDescriptionAlignment} — LoRA fine-tuning on
         furniture product corpus; hallucinated dimension claims 43\%$\to$4\%
@@ -237,16 +241,20 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         responses pushed 6$\times$ further in log-prob space than preferred
         ($-$72.5 vs $-$11.3 log-ratio).
         \href{https://github.com/ajaykumarsoma/DPO}{$\nearrow$}}
-      \resumeItem{\textbf{Guardrails} — 3-layer safety harness built via
-        red-team / adversarial prompt testing: input safety classifier
-        (precision\,=\,1.00, zero false positives against adversarial
-        jailbreak prompts), PII detector (recall\,=\,0.95), faithfulness
-        filter (AUC\,=\,0.756). No library — built from signal level.
+      \resumeItem{\textbf{Guardrails} — 3-layer pipeline of binary safety
+        classifiers for anomaly detection and misuse mitigation, built via
+        red-team / adversarial prompt testing: input classifier with
+        prompt injection mitigation (precision\,=\,1.00, zero false
+        positives on jailbreak and injection attacks), PII detector
+        (recall\,=\,0.95), faithfulness filter (AUC\,=\,0.756).
+        No library — built from signal level.
         \href{https://github.com/ajaykumarsoma/Guardrails}{$\nearrow$}}
-      \resumeItem{\textbf{EvalFramework} — LLM-as-Judge ($\rho$\,=\,$-$0.10),
-        G-Eval ($\rho$\,=\,0.36), hallucination detection (AUC\,=\,0.43).
-        Calibrates 10B+ parameter scale requirement for reliable automated
-        LLM evaluation.
+      \resumeItem{\textbf{EvalFramework} — automated safety evaluation
+        pipeline: LLM-as-Judge ($\rho$\,=\,$-$0.10), G-Eval
+        ($\rho$\,=\,0.36), hallucination detection (AUC\,=\,0.43);
+        generates representative test cases to surface model failure
+        modes. Key calibration result: reliable automated safety
+        evaluation requires 10B+ parameter judges.
         \href{https://github.com/ajaykumarsoma/EvalFramework}{$\nearrow$}}
     \resumeItemListEnd
 
@@ -293,7 +301,9 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         $\cdot$ Grokking (phase transition step\,4000, Fourier basis)
         $\cdot$ Superposition (onset at high sparsity)
         $\cdot$ InductionHead Formation $\cdot$ CatastrophicForgetting
-        $\cdot$ LLM Agents (ReAct loop).}
+        $\cdot$ LLM Agents (ReAct loop — agentic safety evaluation:
+        tool-misuse detection and multi-step risk under goal
+        misgeneralisation).}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -303,8 +313,10 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
     \textbf{Safety \& Alignment}{: Reward modelling, DPO, GRPO, RLHF
-      pipelines, guardrails, hallucination detection, NIST AI RMF,
-      red-teaming, eval frameworks (LLM-as-Judge, G-Eval)} \\[2pt]
+      pipelines, behavioral ML classifiers, anomaly detection, prompt
+      injection mitigation, guardrails, hallucination detection,
+      NIST AI RMF, red-teaming, eval frameworks (LLM-as-Judge, G-Eval),
+      agentic safety evaluation} \\[2pt]
     \textbf{Fine-Tuning}{: LoRA, QLoRA, SFT, instruction tuning,
       knowledge distillation, INT8/INT4 PTQ, model merging (SLERP)} \\[2pt]
     \textbf{Interpretability}{: Activation patching, sparse autoencoders,
