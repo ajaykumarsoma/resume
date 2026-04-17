@@ -291,6 +291,17 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         RLHF stage 2 implemented as the standalone component DPO
         short-circuits.
         \href{https://github.com/ajaykumarsoma/RewardModel}{$\nearrow$}}
+      \resumeItem{\textbf{PPO-RLHF} — RLHF stage 3 from scratch:
+        PPO-clip ($\epsilon$\,=\,0.2) with KL penalty against a
+        frozen reference, driven by the stage-2 reward model. A
+        single 1.54B backbone plays all three RLHF roles
+        (policy\,/\,reference\,/\,reward) via a switchable
+        dual-LoRA adapter, keeping peak memory at $\sim$6\,GB
+        instead of the naive $\sim$18\,GB. 21.4\,min end-to-end on
+        M4 MPS; honestly reports flat reward after 20 rollouts
+        (final\_kl $\approx$ 0), empirically illustrating the
+        sample-inefficiency that motivates DPO.
+        \href{https://github.com/ajaykumarsoma/PPO-RLHF}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
