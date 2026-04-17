@@ -282,6 +282,15 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         the LoRA adapter to compute $\log\pi_\theta$ and
         $\log\pi_\mathrm{ref}$ from one backbone.
         \href{https://github.com/ajaykumarsoma/DPO-3B}{$\nearrow$}}
+      \resumeItem{\textbf{RewardModel} (Qwen2.5-1.5B) — explicit
+        scalar reward model trained with Bradley-Terry loss on
+        HH-RLHF; LoRA rank-4 backbone (544k params) + linear head
+        (1.5k params), 0.035\% trainable. Held-out pairwise
+        preference accuracy \textbf{0.625}, chosen\,$-$\,rejected
+        reward margin +12.3 after 350 steps in 7.8\,min. This is
+        RLHF stage 2 implemented as the standalone component DPO
+        short-circuits.
+        \href{https://github.com/ajaykumarsoma/RewardModel}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
