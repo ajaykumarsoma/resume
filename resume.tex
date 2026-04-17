@@ -302,6 +302,18 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         (final\_kl $\approx$ 0), empirically illustrating the
         sample-inefficiency that motivates DPO.
         \href{https://github.com/ajaykumarsoma/PPO-RLHF}{$\nearrow$}}
+      \resumeItem{\textbf{RepresentationEngineering} — Zou et al.\
+        2023 implemented from scratch on Qwen2.5-1.5B: extract the
+        harmlessness direction from 50 HH-RLHF contrast pairs,
+        sweep a linear probe across all 28 residual-stream layers,
+        and steer the model at inference time. Best probe layer
+        \textbf{27\,/\,27} (safety encoded late, consistent with
+        instruction-tuning theory); steering at $\alpha$\,=\,5.0
+        penalises harmful continuations \textbf{1.71$\times$} more
+        than harmless ones — a causal test that the direction
+        drives behaviour. Inference-time alignment as a
+        complement to the RLHF-training-time chain above.
+        \href{https://github.com/ajaykumarsoma/RepresentationEngineering}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
