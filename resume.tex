@@ -77,7 +77,7 @@
 \begin{center}
   {\Huge \scshape Ajay Kumar Soma} \\[4pt]
   \small
-  Nagpur, India \quad$|$\quad
+  Chennai, India \quad$|$\quad
   \href{mailto:ajaykumar.career@gmail.com}{ajaykumar.career@gmail.com} \quad$|$\quad
   \href{https://linkedin.com/in/ajaykumarsoma}{linkedin.com/in/ajaykumarsoma} \\[2pt]
   \href{https://ajaykumarsoma.github.io/MI-Portfolio}{ajaykumarsoma.github.io/MI-Portfolio}
@@ -256,6 +256,17 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         modes. Key calibration result: reliable automated safety
         evaluation requires 10B+ parameter judges.
         \href{https://github.com/ajaykumarsoma/EvalFramework}{$\nearrow$}}
+      \resumeItem{\textbf{Sleeper-and-GCG} — alignment stress-test chain
+        on Qwen2.5-1.5B-Instruct: installed a Sleeper-Agents-style
+        backdoor via SFT+LoRA (100\% activation on trigger, 0\% on
+        clean), detected it with a per-layer linear probe on the
+        residual stream (AUROC\,=\,1.00 at layer\,1), then ran a
+        from-scratch Greedy Coordinate Gradient attack; GCG lifts
+        base-model jailbreak ASR 0\%$\to$33\%, while the backdoor
+        unexpectedly \emph{captures} the adversarial surface on the
+        sleeper (ASR\,=\,0\%). Mini-replication of
+        Hubinger et al.\ 2024 + Zou et al.\ 2023 on laptop hardware.
+        \href{https://github.com/ajaykumarsoma/Sleeper-and-GCG}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
