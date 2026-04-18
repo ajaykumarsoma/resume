@@ -335,6 +335,20 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         reference. Targets the most-cited enterprise LLM
         fine-tuning use case in 2026 hiring signals.
         \href{https://github.com/ajaykumarsoma/ClinicalCoder-ICD10}{$\nearrow$}}
+      \resumeItem{\textbf{FinNarrative-Synth} — financial domain
+        adaptation on Qwen2.5-1.5B with from-scratch SFT\,+\,LoRA
+        (rank-8 on \texttt{q\_proj}/\texttt{v\_proj}, 1.09\,M
+        trainable params = 0.071\%), response-token-masked
+        cross-entropy on 300 SEC EDGAR 10-K excerpt\,/\,summary pairs
+        (\texttt{kritsadaK/EDGAR-CORPUS-Financial-Summarization}).
+        ROUGE-1 F1 \textbf{0.226\,$\to$\,0.268} (+18.5\% rel.);
+        ROUGE-L F1 \textbf{0.129\,$\to$\,0.163} (+26.8\% rel.) on
+        30 held-out filings in 18.1\,min on M4 MPS. Larger ROUGE-L
+        lift signals \emph{structural} adaptation to the target
+        summary ordering, not just vocabulary overlap. Both ROUGE
+        metrics (unigram Counter and LCS DP) implemented in the
+        file --- no \texttt{rouge\_score} / \texttt{peft} / \texttt{trl}.
+        \href{https://github.com/ajaykumarsoma/FinNarrative-Synth}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
