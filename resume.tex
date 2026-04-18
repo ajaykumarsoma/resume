@@ -316,6 +316,27 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         \href{https://github.com/ajaykumarsoma/RepresentationEngineering}{$\nearrow$}}
     \resumeItemListEnd
 
+  %-- Enterprise Domain Fine-Tuning (Qwen2.5-1.5B) ---------------------------
+  \resumeProjectHeading
+    {\textbf{Enterprise Domain Fine-Tuning} \emph{(Qwen2.5-1.5B-Instruct,
+      on-laptop)}}{}
+    \resumeItemListStart
+      \resumeItem{\textbf{ClinicalCoder-ICD10} — healthcare domain
+        adaptation on Qwen2.5-1.5B with from-scratch SFT\,+\,LoRA
+        (rank-8 on \texttt{q\_proj}/\texttt{v\_proj}, 1.09\,M
+        trainable params = 0.071\%), response-token-masked
+        cross-entropy on 500 synthetic clinical notes covering the
+        top-20 ICD-10-CM nervous-system chapter prefixes. Valid
+        output format \textbf{0\%\,$\to$\,100\%}; chapter-level
+        accuracy \textbf{0\,$\to$\,23\%} (4.6$\times$ random) in
+        19.9\,min on M4 MPS ($\sim$4\,GB peak). Honest mode-collapse
+        analysis toward ``other/unspecified'' subcodes quantifies
+        the laptop-scale gap vs.\ the public MedGemma-4B 88\%
+        reference. Targets the most-cited enterprise LLM
+        fine-tuning use case in 2026 hiring signals.
+        \href{https://github.com/ajaykumarsoma/ClinicalCoder-ICD10}{$\nearrow$}}
+    \resumeItemListEnd
+
   %-- Fine-Tuning and Inference ----------------------------------------------
   \resumeProjectHeading
     {\textbf{Fine-Tuning \& Inference}}{}
