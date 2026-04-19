@@ -267,6 +267,21 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         sleeper (ASR\,=\,0\%). Mini-replication of
         Hubinger et al.\ 2024 + Zou et al.\ 2023 on laptop hardware.
         \href{https://github.com/ajaykumarsoma/Sleeper-and-GCG}{$\nearrow$}}
+      \resumeItem{\textbf{CircuitBreakers-Defense} — defense-side
+        complement to \emph{Sleeper-and-GCG} on the same base model:
+        trained a 155k-parameter LoRA (r\,=\,8 on \texttt{q\_proj}/
+        \texttt{v\_proj} of four middle decoder blocks, 0.01\% of
+        weights) with the RMU representation-misdirection objective
+        --- L2-push harmful-prompt residual-stream activations toward
+        a fixed random target while pinning benign activations to the
+        frozen base. Cuts prefill-attack ASR 0.60$\to$0.10 (5$\times$,
+        $-$83\% rel.) for a +7.2\% benign-PPL cost; 7.1\,min on M4 MPS.
+        Ships a coherence-checked ASR judge that correctly excludes
+        RMU-induced number-spam (a common over-reporting failure mode
+        of representation defenses). Re-implementation of
+        Zou et al.\ 2024 + Li et al.\ 2024 from scratch; no
+        \texttt{peft} / \texttt{trl}.
+        \href{https://github.com/ajaykumarsoma/CircuitBreakers-Defense}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
