@@ -349,6 +349,21 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         metrics (unigram Counter and LCS DP) implemented in the
         file --- no \texttt{rouge\_score} / \texttt{peft} / \texttt{trl}.
         \href{https://github.com/ajaykumarsoma/FinNarrative-Synth}{$\nearrow$}}
+      \resumeItem{\textbf{LegalClause-Extractor} --- legal domain
+        adaptation on Qwen2.5-1.5B with from-scratch SFT\,+\,LoRA
+        (rank-8 on \texttt{q\_proj}/\texttt{v\_proj}, 1.09\,M
+        trainable params = 0.071\%) on CUAD (Hendrycks et al.\
+        NeurIPS 2021), 510 commercial contracts $\times$ 41 clause
+        types, extractive SQuAD-v2 task with 30\% no-answer
+        negatives. Token F1 \textbf{0.384\,$\to$\,0.627}
+        (+63\% rel.); \textbf{positive-case F1 0.027\,$\to$\,0.411
+        (15$\times$ lift)} while \emph{preserving} no-answer
+        accuracy at \textbf{1.000} --- breaks the RLHF over-refusal
+        baseline without inducing hallucinated clause outputs.
+        11.9\,min on M4 MPS. SQuAD-style Token-F1\,/\,EM and the
+        LoRA\,/\,SFT loop all implemented from scratch ---
+        no \texttt{peft} / \texttt{trl} / \texttt{evaluate}.
+        \href{https://github.com/ajaykumarsoma/LegalClause-Extractor}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
