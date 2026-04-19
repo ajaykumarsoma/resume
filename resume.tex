@@ -282,6 +282,26 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         Zou et al.\ 2024 + Li et al.\ 2024 from scratch; no
         \texttt{peft} / \texttt{trl}.
         \href{https://github.com/ajaykumarsoma/CircuitBreakers-Defense}{$\nearrow$}}
+      \resumeItem{\textbf{EmergentMisalignment} — scale-down
+        reproduction of Betley et al.\ 2025 (\emph{Narrow
+        finetuning can produce broadly misaligned LLMs},
+        arXiv:2502.17424) on the same Qwen2.5-1.5B-Instruct
+        backbone: 2.18M-param LoRA SFT (r\,=\,16 on
+        \texttt{q\_proj}/\texttt{v\_proj}) on 150 insecure-code
+        Q/A pairs from the paper's public release, compared
+        against a matched \emph{secure}-code control on the same
+        user questions. Direct-harmful refusal rate drops
+        1.00$\to$0.60 under insecure-SFT vs 1.00$\to$0.70 under
+        secure-SFT --- isolating 30\,pp of generic SFT damage
+        from a 10\,pp insecure-specific emergent-misalignment
+        component (a decomposition the original paper does not
+        report). Broad-misalignment axis null at 1.5B (honest
+        scale break vs paper's 32B+ regime). Ships a
+        word-boundary-regex + coherence-checked keyword judge
+        that eliminates substring false positives
+        (e.g.\ \texttt{stab}$\subset$\texttt{establishes}).
+        34.8\,min on M4 MPS.
+        \href{https://github.com/ajaykumarsoma/EmergentMisalignment}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
