@@ -302,6 +302,23 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         (e.g.\ \texttt{stab}$\subset$\texttt{establishes}).
         34.8\,min on M4 MPS.
         \href{https://github.com/ajaykumarsoma/EmergentMisalignment}{$\nearrow$}}
+      \resumeItem{\textbf{InoculationPrompting} --- defense
+        for the narrow-SFT refusal regression in
+        \textbf{EmergentMisalignment} (Wichers et al.\ 2025,
+        arXiv:2504.17596). Same Qwen2.5-1.5B-Instruct base,
+        same 150 insecure-code examples, same LoRA r\,=\,16;
+        only change is a train-time-only system prompt
+        labelling the assistant's vulnerable-code behaviour as
+        adversarial-training. At inference (no system prompt)
+        direct-harmful refusal recovers 0.60$\to$0.90 ---
+        \textbf{30 of 40\,pp (75\% of max possible recovery)}
+        at near-zero cost to the code-teaching loss (0.240 vs
+        0.252). Turns a learned trait into a
+        context-conditional behaviour; closes the four-project
+        attack/defense symmetry of the Alignment
+        Stress-Testing arc (\#37/\#39 attacks, \#38/\#40
+        defenses) on one 1.5B base.
+        \href{https://github.com/ajaykumarsoma/InoculationPrompting}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
