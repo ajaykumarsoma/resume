@@ -319,6 +319,25 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         Stress-Testing arc (\#37/\#39 attacks, \#38/\#40
         defenses) on one 1.5B base.
         \href{https://github.com/ajaykumarsoma/InoculationPrompting}{$\nearrow$}}
+      \resumeItem{\textbf{RefusalDirection-Ablation} ---
+        scale-down reproduction of Arditi et al.\ 2024
+        (\emph{Refusal in Language Models Is Mediated by a
+        Single Direction}, arXiv:2406.11717, NeurIPS 2024) on
+        the same Qwen2.5-1.5B-Instruct base. Pure forward-pass
+        mechanistic attack: fit a single 1536-dim unit vector
+        as mean-diff of last-prompt-token residual-stream
+        activations between 32 harmful and 32 harmless prompts
+        (disjoint from eval), then project-ablate it at every
+        decoder-layer residual output + final norm, at every
+        token position, during generation. Direct-harmful ASR
+        \textbf{0/10 $\to$ 10/10} at best layer L\,=\,14 of 28;
+        WikiText-2 perplexity 18.21\,$\to$\,23.10
+        (+26.9\% capability tax). 5.3\,min on M4 MPS, no
+        training, no \texttt{peft}/\texttt{trl}. Mechanistic
+        finding retroactively explains \#39's narrow-SFT
+        refusal regression and \#40's inoculation defense
+        --- both operate on this same direction.
+        \href{https://github.com/ajaykumarsoma/RefusalDirection-Ablation}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
