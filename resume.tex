@@ -358,6 +358,31 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         attack surface, an attacker needs zero information
         about the deployed defense. 16.85\,min on M4 MPS.
         \href{https://github.com/ajaykumarsoma/Composition-InoculationVsAblation}{$\nearrow$}}
+      \resumeItem{\textbf{LAT-Defense} --- scale-down of
+        Sheshadri et al.\ 2024 \emph{Targeted Latent
+        Adversarial Training} (arXiv:2407.15549) as the
+        mechanistic-defense follow-up to \#42. LoRA r\,=\,16
+        SFT on 31 base-model refusals with \#41's
+        projection-ablation of $r_{\text{base}}$ installed
+        at every decoder layer during the forward pass, so
+        the LoRA is forced to route refusal signal through
+        directions orthogonal to the attack. 8-condition
+        eval matrix adds a harmless-prompt capability check
+        to the shared 10-prompt harmful eval. Defense holds
+        against both the static attack and an \textbf{adaptive
+        refit attack}: \textbf{D/E both 10/10} harmful
+        refusal. However, the same LoRA refuses
+        \textbf{10/10 harmless prompts} where the base model
+        answers 0/10 --- \textbf{capability collapse}: with
+        only the refusal side of the training distribution
+        present, the CE minimum is the constant string
+        `I'm sorry, but I can't assist with that.' Training
+        loss 1.89\,$\to$\,0.0002 in 124 steps is the
+        constant-policy signature. Honest null that
+        sharpens the arc's open problem to
+        `\emph{mechanistic defense that preserves
+        capability}'. 17.36\,min on M4 MPS.
+        \href{https://github.com/ajaykumarsoma/LAT-Defense}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
