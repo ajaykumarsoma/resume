@@ -338,6 +338,26 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         refusal regression and \#40's inoculation defense
         --- both operate on this same direction.
         \href{https://github.com/ajaykumarsoma/RefusalDirection-Ablation}{$\nearrow$}}
+      \resumeItem{\textbf{Composition-InoculationVsAblation}
+        --- composition ablation between the \#40 defense
+        and \#41 attack on the same Qwen2.5-1.5B-Instruct
+        base. Re-trained the inoculated LoRA
+        (r\,=\,16, 150 insecure-code samples with
+        train-time-only adversarial system prompt), refit
+        the refusal direction on the defended model, and
+        ran a 6-condition eval matrix (base / inoculated
+        $\times$ no-ablation / stale-direction /
+        refit-direction) on the shared 10 direct-harmful
+        prompts. \textbf{cos($r_{\text{base}}$,
+        $r_{\text{inoc}}$)\,=\,0.933 at L\,=\,14} (mean
+        0.917 across 28 layers) --- inoculation barely
+        moves the direction; the stale pre-defense vector
+        still jailbreaks the inoculated model
+        \textbf{10/10}. Cleanly informative null:
+        behavioural defenses do not cover the mechanistic
+        attack surface, an attacker needs zero information
+        about the deployed defense. 16.85\,min on M4 MPS.
+        \href{https://github.com/ajaykumarsoma/Composition-InoculationVsAblation}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
