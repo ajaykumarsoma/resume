@@ -404,6 +404,35 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         penalty} on LoRA-induced projection onto
         $r_{\text{base}}$. 30.82\,min on M4 MPS.
         \href{https://github.com/ajaykumarsoma/LAT-HarmlessDual}{$\nearrow$}}
+      \resumeItem{\textbf{LAT-OrthoPenalty} --- orthogonality-
+        penalty follow-up to \#44 that adds the single
+        ingredient \#44's diagnosis pointed at. Same LoRA,
+        ablation schedule, and mixed training data; the loss
+        gains $\lambda \cdot \operatorname{mean}_t[\cos^{2}(
+        h_{L}[t],\, \hat r_{\text{base}})]$ ($\lambda = 1.0$,
+        harmless examples only), with $h_{L}$ captured at
+        $L=14$ \emph{before} projection-ablation via a gradient-
+        path capture hook registered ahead of the ablation hook
+        on the same decoder block. Produces a \textbf{third
+        graded null: the penalty never bites}. $\cos^{2}$
+        stays at $\approx\!5\!\times\!10^{-4}$ throughout
+        training (cosine $\approx 0.022$) --- base-model
+        harmless residual at $L=14$ is already near-orthogonal
+        to $r_{\text{base}}$ by the mean-diff construction, so
+        $\lambda\cdot\cos^{2}$ is $\sim$400$\times$ smaller
+        than CE at every step. D/E/F/G land at
+        \textbf{0.90 / 0.80 / 0.50 / 0.20} (essentially
+        identical to \#44), $\cos(r_{\text{base}},
+        r_{\text{def}}) = 0.914$. F still refuses 5/10 harmless
+        prompts with the constant string, but $\cos^{2}(h_{14},
+        \hat r_{\text{base}})$ on those prompts is near-zero ---
+        \textbf{localises the remaining leak to downstream
+        layers 15--27 via the LoRA in \texttt{q\_proj}/
+        \texttt{v\_proj} across all 28 layers}, not the
+        attack-target layer. Rules out single-layer ortho as a
+        sufficient defense; the defense surface is genuinely
+        multi-layer. 18.06\,min on M4 MPS.
+        \href{https://github.com/ajaykumarsoma/LAT-OrthoPenalty}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
