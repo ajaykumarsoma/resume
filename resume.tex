@@ -383,6 +383,27 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         `\emph{mechanistic defense that preserves
         capability}'. 17.36\,min on M4 MPS.
         \href{https://github.com/ajaykumarsoma/LAT-Defense}{$\nearrow$}}
+      \resumeItem{\textbf{LAT-HarmlessDual} --- distributional
+        fix for the \#43 capability collapse. Same LoRA +
+        ablation schedule, but training set is
+        \textbf{31 harmful$\to$refusal interleaved with
+        21 harmless$\to$(base-model answer)} pairs (40\,\%
+        harmless). Produces a \textbf{partial mechanistic
+        defense with an asymmetric failure mode}:
+        harmful refusal \textbf{9/10 static + 8/10 adaptive}
+        (slight weakening vs \#43's 10/10), but F = 7/10
+        over-refuses harmless \emph{without} ablation while
+        \textbf{G = 1/10 under ablation} --- the \#41 attack
+        acts as a capability-\emph{restoration} knob on benign
+        inputs. The same direction $r_{\text{base}}$ acts
+        differently on harmful vs harmless inputs in the
+        defended model, with $\cos(r_{\text{base}},
+        r_{\text{def}}) = 0.910$ at $L=14$ showing the
+        direction barely moved. Localises the remaining
+        defense gap to a \textbf{missing orthogonality
+        penalty} on LoRA-induced projection onto
+        $r_{\text{base}}$. 30.82\,min on M4 MPS.
+        \href{https://github.com/ajaykumarsoma/LAT-HarmlessDual}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- RLHF & Alignment at Scale (Qwen2.5-1.5B) -------------------------------
