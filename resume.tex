@@ -195,7 +195,7 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 \resumeSubHeadingListEnd
 
 %--- Independent Research ----------------------------------------------------
-\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{48 projects — full portfolio}}
+\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{49 projects — full portfolio}}
 \resumeSubHeadingListStart
 
   %-- Manufacturing AI Safety ------------------------------------------------
@@ -589,7 +589,7 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         wrapper, Qwen-native tool-call parser, injection harness,
         and lexical grader all from scratch --- no LangChain /
         LlamaIndex / CrewAI / AutoGen.
-        \href{https://github.com/ajaykumarsoma/AgentLab-Harness}{$\nearrow$}}
+        \href{https://github.com/ajaykumarsoma/AgenticAI/tree/main/AgentLab-Harness}{$\nearrow$}}
       \resumeItem{\textbf{AgentPatterns-Travel} --- from-scratch
         comparison of \textbf{four multi-agent design patterns}
         (Prompt-Chaining, Routing, Parallel-Vote N\,=\,3,
@@ -612,7 +612,31 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         tool-schema rendering, and the voter/aggregator logic
         implemented directly against
         \texttt{transformers.generate}.
-        \href{https://github.com/ajaykumarsoma/AgentPatterns-Travel}{$\nearrow$}}
+        \href{https://github.com/ajaykumarsoma/AgenticAI/tree/main/AgentPatterns-Travel}{$\nearrow$}}
+      \resumeItem{\textbf{CorporateQA-Team} --- carries the
+        Chaining win from AgentPatterns-Travel into a
+        \textbf{corporate 4-role PR-review pipeline}
+        (BA\,$\to$\,Dev\,$\to$\,QA\,$\to$\,Senior) on a 20-PR
+        synthetic benchmark (10 buggy across 4 classes
+        --- off-by-one, unhandled-null, wrong-branch,
+        missing-test --- plus 10 clean) with deterministic
+        \texttt{static\_check}\,/\,\texttt{run\_tests}
+        oracles. Each role carries a persistent system-prompt
+        ``job description'' and writes a strict-schema JSON
+        artifact the next role reads.
+        \textbf{Chaining transports to role specialisation}:
+        \textbf{100\% verdict accuracy (20/20), 10/10 bug
+        recall, 0/10 false-positives}. Per-role signal: Dev
+        alone catches 10/10 buggy (plus 1/10 clean over-flag),
+        QA alone only 5/10 --- misses both wrong-branch and
+        both missing-test cases; \textbf{Senior aggregation
+        recovers from both failure modes} to reach the perfect
+        score. 29.3\,min on M4 MPS (bf16); 4 LLM calls / PR,
+        avg 212 output tokens / PR. Dataset, tool oracles,
+        role runner, grader, and 3-panel figure all from
+        scratch --- no LangChain / LlamaIndex / CrewAI /
+        AutoGen / DSPy.
+        \href{https://github.com/ajaykumarsoma/AgenticAI/tree/main/CorporateQA-Team}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
