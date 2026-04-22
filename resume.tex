@@ -195,7 +195,7 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 \resumeSubHeadingListEnd
 
 %--- Independent Research ----------------------------------------------------
-\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{30 projects — full portfolio}}
+\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{46 projects — full portfolio}}
 \resumeSubHeadingListStart
 
   %-- Manufacturing AI Safety ------------------------------------------------
@@ -530,6 +530,38 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         LoRA\,/\,SFT loop all implemented from scratch ---
         no \texttt{peft} / \texttt{trl} / \texttt{evaluate}.
         \href{https://github.com/ajaykumarsoma/LegalClause-Extractor}{$\nearrow$}}
+      \resumeItem{\textbf{ToolCalling-FineTune} --- agentic
+        tool-calling fine-tuning on Qwen2.5-1.5B-Instruct
+        against the Berkeley Function-Calling Leaderboard
+        (BFCL v4). Cross-distribution LoRA r\,=\,16 SFT
+        on \texttt{q\_proj}/\texttt{v\_proj} across all
+        28 decoder layers (2.18\,M trainable, 0.14\%)
+        trained on 478 single-call rows of
+        \texttt{NousResearch/hermes-function-calling-v1}
+        with response-token-masked cross-entropy, then
+        evaluated on BFCL v4 Simple-Python and Multiple
+        (n\,=\,150 each) with AST-match semantics
+        re-implemented from scratch. \textbf{Clean
+        cautionary null}: fp16 baseline
+        \textbf{0.853\,/\,0.813} is near-ceiling; SFT
+        regresses to \textbf{0.800\,/\,0.767
+        ($-$5.3\,/\,$-$4.6\,pp)} on both categories ---
+        CE already saturated at $\approx$0.030 from
+        step 1, so the adapter picks up Hermes-flavoured
+        argument habits that fail BFCL's strict match.
+        \textbf{Isolates the dtype variable} behind the
+        widely-cited \texttt{siddharthvader} 9.7\%\,$\to$\,57\%
+        reference: that +47\,pp gain is a
+        4-bit-quantisation artefact --- the fp16 base was
+        never broken, so fine-tuning has nothing to
+        recover. 33.57\,min on M4 MPS; LoRA,
+        \texttt{<tool\_call>} extractor, AST matcher, and
+        SFT loop all from scratch (no \texttt{peft} /
+        \texttt{trl} / \texttt{bfcl\_eval}). Fills the
+        agentic-systems gap in the portfolio with a
+        benchmark-recognisable number and a
+        ``when not to fine-tune'' finding.
+        \href{https://github.com/ajaykumarsoma/ToolCalling-FineTune}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
