@@ -195,7 +195,7 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
 \resumeSubHeadingListEnd
 
 %--- Independent Research ----------------------------------------------------
-\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{46 projects — full portfolio}}
+\section{Independent Research · \normalfont\small\href{https://ajaykumarsoma.github.io/MI-Portfolio}{48 projects — full portfolio}}
 \resumeSubHeadingListStart
 
   %-- Manufacturing AI Safety ------------------------------------------------
@@ -562,6 +562,57 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
         benchmark-recognisable number and a
         ``when not to fine-tune'' finding.
         \href{https://github.com/ajaykumarsoma/ToolCalling-FineTune}{$\nearrow$}}
+    \resumeItemListEnd
+
+  %-- Agentic AI --- Architectures \& Design Patterns (Qwen2.5-1.5B) ---------
+  \resumeProjectHeading
+    {\textbf{Agentic AI --- Architectures \& Design Patterns} \emph{(Qwen2.5-1.5B-Instruct,
+      on-laptop)}}{}
+    \resumeItemListStart
+      \resumeItem{\textbf{AgentLab-Harness} --- from-scratch
+        scientific evaluation of \textbf{ReAct vs.\ Reflexion}
+        on Qwen2.5-1.5B-Instruct across four axes (task success,
+        efficiency, indirect-prompt-injection ASR, unsafe-action
+        ASR) on a 30-trajectory travel benchmark (15 clean tasks
+        + 10 injection probes + 5 unsafe-booking probes) with a
+        6-tool stack. \textbf{Reflexion net-negative at 1.5B}:
+        matches ReAct's \textbf{46.7\% pass@1} exactly while
+        paying \textbf{+16\% latency} for a self-critic that
+        returns PASS on all 15 clean runs (including the 8 that
+        are objectively wrong) --- \textbf{zero retries fire}.
+        Identifies \textbf{single-turn collapse} as the real
+        ceiling (0\% \texttt{<final\_answer>} emission across all
+        60 trajectories) and flags the 0\% unsafe-ASR as a
+        \emph{confound}, not aligned refusal: \texttt{book\_trip}
+        is unreachable because the loop never iterates.
+        28.1\,min on M4 MPS (bf16); agent loop, critic/retry
+        wrapper, Qwen-native tool-call parser, injection harness,
+        and lexical grader all from scratch --- no LangChain /
+        LlamaIndex / CrewAI / AutoGen.
+        \href{https://github.com/ajaykumarsoma/AgentLab-Harness}{$\nearrow$}}
+      \resumeItem{\textbf{AgentPatterns-Travel} --- from-scratch
+        comparison of \textbf{four multi-agent design patterns}
+        (Prompt-Chaining, Routing, Parallel-Vote N\,=\,3,
+        Orchestrator-Worker) on the AgentLab-Harness benchmark.
+        \textbf{External control flow is worth 4.5$\times$ the
+        ReAct baseline}: Chaining hits \textbf{60.0\% pass@1} at
+        2 LLM calls (vs.\ ReAct's 13\%); Routing ties exactly at
+        +50\% compute. \textbf{Parallel-Vote net-negative} ---
+        40\% pass@1 ($-$20\,pp) and injection-ASR
+        \textbf{20\% $\to$ 50\%}: temperature-0.7 sampling gives
+        the injected review repeated chances to win the
+        majority-id vote. \textbf{Orchestrator-Worker collapses
+        to 13.3\%} on a syntactic planner failure (the 1.5B emits
+        duplicate \texttt{"subtasks"} keys silently dropped by
+        \texttt{json.loads}); its 0\% ASR is structurally
+        confounded --- \texttt{hotel\_search} is never called.
+        Reframes the \#47 single-turn collapse as a
+        \emph{control-flow artefact}, not a reasoning ceiling.
+        46.7\,min on M4 MPS; all four patterns, the Qwen-native
+        tool-schema rendering, and the voter/aggregator logic
+        implemented directly against
+        \texttt{transformers.generate}.
+        \href{https://github.com/ajaykumarsoma/AgentPatterns-Travel}{$\nearrow$}}
     \resumeItemListEnd
 
   %-- Fine-Tuning and Inference ----------------------------------------------
