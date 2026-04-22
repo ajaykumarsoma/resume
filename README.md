@@ -2,8 +2,7 @@
 
 LaTeX source for my professional resume, targeting **AI Safety Engineer · Responsible AI Engineer · LLM Fine-Tuning Engineer · RLHF Engineer** roles.
 
-📄 **[Download latest PDF →](AjayKumarSoma_Resume.pdf)**  
-🌐 **[Full project portfolio →](https://ajaykumarsoma.github.io/MI-Portfolio)**
+📄 **[Download latest PDF →](AjayKumarSoma_Resume.pdf)**
 
 ---
 
@@ -42,7 +41,7 @@ Search for `[` in `resume.tex` — every bracketed item is a placeholder:
 ## Resume structure
 
 ```
-Header          — name · email · LinkedIn · portfolio · GitHub
+Header          — name · email · LinkedIn · GitHub
 Summary         — 18 yr IT · MTech VNIT · safety/alignment focus
 Experience      — Ashley Furniture (3 yr AI Eng) + prior IT roles
 Independent     — 33 research projects across 4 categories:
