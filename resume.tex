@@ -99,6 +99,42 @@ with 30 independent research experiments covering the full alignment and
 safety engineering stack — each implemented from first principles.
 \textbf{Target roles:} AI Safety Engineer $\cdot$ Responsible AI Engineer
 $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
+2 papers under review at \textbf{IEEE SPCOM 2026}
+(mechanistic interpretability $\cdot$ multilingual AI safety).
+
+%--- Publications ----------------------------------------------------
+\section{Publications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    A.~K.~Soma,
+    ``The Safety Ratio: Quantifying Grounding vs Confidence Decoupling in
+    Autoregressive Transformers,''
+    \textit{IEEE International Conference on Signal Processing and
+    Communications (SPCOM 2026)}, IISc Bangalore, India, 2026.
+    \textbf{[Under Review]}\\[2pt]
+    Introduces the \textit{Safety Ratio} (SR), a mechanistic metric
+    (Layer~0 Sentinel neurons / Layers~2--4 Engine neurons) for real-time
+    adversarial input detection; \textbf{95\% adversarial recall}
+    vs 44\% for perplexity baselines ($2.16\times$ improvement);
+    statistically significant Sentinel--Engine decoupling
+    ($p = 0.0052$, Cohen's $d = 0.40$); validated on 301 prompts
+    across Qwen2.5-1.5B, GPT-2, Pythia-1.4B, and 7B models.
+  }}
+  \vspace{4pt}
+  \small{\item{
+    A.~K.~Soma,
+    ``Multilingual Multimodal Cybercrime Detection for Indian Context Using
+    Explainable Artificial Intelligence,''
+    \textit{IEEE International Conference on Signal Processing and
+    Communications (SPCOM 2026)}, IISc Bangalore, India, 2026.
+    \textbf{[Under Review]}\\[2pt]
+    Transformer-based framework (Qwen2.5-7B\,+\,ViT-B/16\,+\,cross-modal
+    attention); 25{,}000-sample dataset across 5 Indian languages and 50
+    cybercrime categories; macro F1\,=\,0.883, accuracy\,=\,0.892,
+    outperforms XLM-R by \textbf{+5.3 F1 pts}; LIME\,+\,attention-map
+    explainability for law-enforcement deployment.
+  }}
+\end{itemize}
 
 %--- Experience --------------------------------------------------------------
 \section{Experience}
@@ -719,39 +755,5 @@ $\cdot$ LLM Fine-Tuning Engineer $\cdot$ RLHF Engineer.
     {BTech, Electronics and Communication Engineering (ECE)}{2006}
     {Jawaharlal Nehru Technological University (JNTU)}{India}
 \resumeSubHeadingListEnd
-
-%--- Publications ----------------------------------------------------
-\section{Publications}
-\begin{itemize}[leftmargin=0.15in, label={}]
-  \small{\item{
-    A.~K.~Soma,
-    ``The Safety Ratio: Quantifying Grounding vs Confidence Decoupling in
-    Autoregressive Transformers,''
-    \textit{IEEE International Conference on Signal Processing and
-    Communications (SPCOM 2026)}, IISc Bangalore, India, 2026.
-    \textbf{[Under Review]}\\[2pt]
-    Introduces the \textit{Safety Ratio} (SR), a mechanistic metric
-    (Layer~0 Sentinel neurons / Layers~2--4 Engine neurons) for real-time
-    adversarial input detection; \textbf{95\% adversarial recall}
-    vs 44\% for perplexity baselines ($2.16\times$ improvement);
-    statistically significant Sentinel--Engine decoupling
-    ($p = 0.0052$, Cohen's $d = 0.40$); validated on 301 prompts
-    across Qwen2.5-1.5B, GPT-2, Pythia-1.4B, and 7B models.
-  }}
-  \vspace{4pt}
-  \small{\item{
-    A.~K.~Soma,
-    ``Multilingual Multimodal Cybercrime Detection for Indian Context Using
-    Explainable Artificial Intelligence,''
-    \textit{IEEE International Conference on Signal Processing and
-    Communications (SPCOM 2026)}, IISc Bangalore, India, 2026.
-    \textbf{[Under Review]}\\[2pt]
-    Transformer-based framework (Qwen2.5-7B\,+\,ViT-B/16\,+\,cross-modal
-    attention); 25{,}000-sample dataset across 5 Indian languages and 50
-    cybercrime categories; macro F1\,=\,0.883, accuracy\,=\,0.892,
-    outperforms XLM-R by \textbf{+5.3 F1 pts}; LIME\,+\,attention-map
-    explainability for law-enforcement deployment.
-  }}
-\end{itemize}
 
 \end{document}
